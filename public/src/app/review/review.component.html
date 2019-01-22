@@ -1,0 +1,29 @@
+<div class = 'container'>
+    <h3>Add a review for {{currentMovie.title}}</h3>
+    <form>
+      <br>
+      <ng-flash-message></ng-flash-message>
+      <p *ngIf = '!myName.valid'>Name is not long enough</p>
+      Your name: <input [(ngModel)] = 'newReview.name' type="text" name='name' required minlength="3" #myName = 'ngModel'>
+      <br>
+      <br>
+      <p *ngIf = '!myStars.valid'>This field is required</p>
+      Stars: <select [(ngModel)] = 'newReview.stars' name = 'stars' required #myStars = 'ngModel'>
+        <option value = '1'>1</option>
+        <option value = '2'>2</option>
+        <option value = '3'>3</option>
+        <option value = '4'>4</option>
+        <option value = '5'>5</option>
+      </select>
+      <br>
+      <br>
+      <p *ngIf = '!myReview.valid'>Review is not long enough</p>
+      Your review: <textarea [(ngModel)] = 'newReview.review' rows="10" cols="20" name = 'review' required minlength="3" #myReview = 'ngModel'>
+        
+      </textarea>
+      <br>
+      <br>
+  
+      <button (click) = 'cancel()'>Cancel</button><input (click) = 'submit()' type='submit' value = 'Submit' [disabled] = '!myName.valid || !myReview.valid || !myStars.valid'>
+    </form>
+  </div>

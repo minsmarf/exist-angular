@@ -1,0 +1,23 @@
+
+
+<button (click) = 'delete()' id = 'delete'>Delete Movie</button>
+<div class = 'container'>
+    <h3>Reviews for {{currentMovie.title}}</h3>
+    Average Stars: {{currentMovie.averageStars}}
+    <table>
+        <thead>
+          <tr>
+            <td>Reviewer</td>
+            <td>Stars</td>
+            <td>Reviews</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let review of currentMovie.reviews | orderBy: stars : true '>
+            <td>{{review.reviewer}}</td>
+            <td>{{review.stars}}</td>
+            <td>{{review.review}}<button (click) = 'deleteReview(review._id, currentMovie._id)'>Delete Review</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

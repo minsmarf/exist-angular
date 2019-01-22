@@ -1,0 +1,43 @@
+.container {
+    outline: 1px solid black;
+    padding: 50px;
+}
+
+#delete {
+    color:white;
+    background-color: red;
+}
+
+td {
+    outline: 1px solid black;
+    padding: 10px;
+}
+
+td button {
+    margin-right: 10px;
+}
+
+.write {
+    color: white;
+    background-color: #859e9c;
+}
+
+
+p {
+    color: purple;
+}
+
+.read {
+    color: white;
+    background-color: #98ad69;
+}
+
+.container h3 {
+    margin-top: 0px !important;
+    margin-right: 20% !important;
+}
+
+.container h3, .container button {
+    display: inline-block;
+    vertical-align: top;
+}

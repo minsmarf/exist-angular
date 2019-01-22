@@ -1,0 +1,25 @@
+<div class = 'container'>
+
+  <h3>Movie List</h3>
+  <button (click) = 'add()' class = 'write'>Add a new movie</button>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <td>Movie Title</td>
+        <td>Available actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = 'let movie of allMovies'>
+        <td>{{movie.title}}</td>
+        <td><button [routerLink] = "['/movies/', movie._id]"class = 'read' >Read Reviews     </button>
+          <button [routerLink] = "['/movies',movie._id,'review']" class = 'write'>Write Review</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-add *ngIf = 'addClicked'></app-add>
+</div>
